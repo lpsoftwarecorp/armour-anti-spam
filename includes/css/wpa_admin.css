@@ -1,0 +1,123 @@
+/* Armour Anti-Spam — admin UI styles. Loaded only on the plugin settings page. */
+.wpa-admin{
+	--wpa-accent:#1e8e3e;
+	--wpa-accent-dark:#157334;
+	--wpa-accent-soft:#eafbf0;
+	--wpa-accent-border:#bfe8cd;
+	--wpa-text:#1d2327;
+	--wpa-muted:#646970;
+	--wpa-border:#e2e4e7;
+	--wpa-radius:10px;
+	--wpa-shadow:0 1px 2px rgba(0,0,0,.04),0 4px 14px rgba(0,0,0,.06);
+	max-width:960px;
+}
+
+/* Header */
+.wpa-admin .wpa-header{display:flex;align-items:center;gap:14px;margin:6px 0 18px;}
+.wpa-admin .wpa-header__icon{
+	width:46px;height:46px;border-radius:12px;flex:0 0 auto;
+	display:flex;align-items:center;justify-content:center;
+	background:linear-gradient(135deg,var(--wpa-accent),var(--wpa-accent-dark));
+	color:#fff;box-shadow:var(--wpa-shadow);
+}
+.wpa-admin .wpa-header__icon .dashicons{font-size:26px;width:26px;height:26px;}
+.wpa-admin .wpa-header__title{margin:0;padding:0;font-size:22px;line-height:1.2;font-weight:600;color:var(--wpa-text);}
+.wpa-admin .wpa-header__sub{margin:3px 0 0;color:var(--wpa-muted);font-size:13px;}
+
+/* Tabs */
+.wpa-admin .wpa-tabs{display:flex;gap:4px;border-bottom:1px solid var(--wpa-border);margin:0 0 22px;}
+.wpa-admin .wpa-tabs a{
+	position:relative;text-decoration:none;padding:10px 16px;
+	font-size:14px;font-weight:500;color:var(--wpa-muted);
+	border-radius:8px 8px 0 0;
+}
+.wpa-admin .wpa-tabs a:hover,.wpa-admin .wpa-tabs a:focus{color:var(--wpa-text);background:var(--wpa-accent-soft);box-shadow:none;outline:0;}
+.wpa-admin .wpa-tabs a.is-active{color:var(--wpa-accent-dark);}
+.wpa-admin .wpa-tabs a.is-active::after{
+	content:"";position:absolute;left:12px;right:12px;bottom:-1px;height:3px;
+	border-radius:3px 3px 0 0;background:var(--wpa-accent);
+}
+
+/* Layout */
+.wpa-admin .wpa-content{max-width:100%;}
+
+/* Card */
+.wpa-admin .wpa-card{
+	background:#fff;border:1px solid var(--wpa-border);
+	border-radius:var(--wpa-radius);box-shadow:var(--wpa-shadow);
+	overflow:hidden;margin:0 0 22px;
+}
+.wpa-admin .wpa-card__head{padding:16px 22px;border-bottom:1px solid var(--wpa-border);display:flex;align-items:center;gap:10px;}
+.wpa-admin .wpa-card__head .dashicons{color:var(--wpa-accent);font-size:20px;width:20px;height:20px;}
+.wpa-admin .wpa-card__title{margin:0;padding:0;font-size:15px;font-weight:600;color:var(--wpa-text);}
+.wpa-admin .wpa-card__intro{margin:0;padding:13px 22px;color:#14532d;font-size:13px;background:var(--wpa-accent-soft);border-bottom:1px solid var(--wpa-border);}
+.wpa-admin .wpa-card__body{padding:4px 22px;}
+
+/* Setting rows */
+.wpa-admin .wpa-row{display:flex;gap:24px;padding:18px 0;border-bottom:1px solid var(--wpa-border);align-items:flex-start;}
+.wpa-admin .wpa-row:last-child{border-bottom:0;}
+.wpa-admin .wpa-row__label{flex:0 0 230px;padding-top:7px;}
+.wpa-admin .wpa-row__label label{font-weight:600;color:var(--wpa-text);font-size:14px;}
+.wpa-admin .wpa-row__control{flex:1 1 auto;min-width:0;}
+.wpa-admin .wpa-row__control input[type=text],
+.wpa-admin .wpa-row__control input[type=number],
+.wpa-admin .wpa-row__control select,
+.wpa-admin .wpa-row__control textarea{border-radius:8px;border:1px solid #c3c7cb;box-shadow:none;}
+.wpa-admin .wpa-row__control input[type=text]:focus,
+.wpa-admin .wpa-row__control input[type=number]:focus,
+.wpa-admin .wpa-row__control select:focus,
+.wpa-admin .wpa-row__control textarea:focus{border-color:var(--wpa-accent);box-shadow:0 0 0 1px var(--wpa-accent);outline:0;}
+
+/* Hints */
+.wpa-admin .wpa-hint{display:block;margin-top:8px;color:var(--wpa-muted);font-size:12.5px;line-height:1.5;max-width:640px;}
+.wpa-admin .wpa-hint code{background:#f0f0f1;padding:1px 5px;border-radius:4px;font-size:12px;}
+.wpa-admin .wpa-warn-icon{color:#b26a00;font-size:15px;width:15px;height:15px;vertical-align:text-bottom;}
+
+/* Field name + regenerate */
+.wpa-admin .wpa-field-name{display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.wpa-admin .wpa-regen{
+	display:inline-flex;align-items:center;justify-content:center;
+	width:34px;height:34px;border-radius:8px;cursor:pointer;
+	background:var(--wpa-accent-soft);color:var(--wpa-accent-dark);
+	border:1px solid var(--wpa-accent-border);transition:background .15s,color .15s;
+}
+.wpa-admin .wpa-regen:hover{background:var(--wpa-accent);color:#fff;border-color:var(--wpa-accent);}
+.wpa-admin .wpa-regen .dashicons{font-size:18px;width:18px;height:18px;}
+
+/* Footer / save bar */
+.wpa-admin .wpa-card__foot{padding:16px 22px;background:#fafafa;border-top:1px solid var(--wpa-border);display:flex;align-items:center;gap:12px;}
+.wpa-admin .wpa-savebar{
+	position:sticky;bottom:16px;margin-top:4px;
+	background:rgba(255,255,255,.92);backdrop-filter:blur(4px);
+	border:1px solid var(--wpa-border);border-radius:var(--wpa-radius);
+	box-shadow:var(--wpa-shadow);padding:14px 20px;display:flex;align-items:center;gap:12px;
+}
+.wpa-admin .wpa-card__foot .button-primary,
+.wpa-admin .wpa-savebar .button-primary{
+	background:var(--wpa-accent);border-color:var(--wpa-accent-dark);
+	box-shadow:none;text-shadow:none;border-radius:8px;padding:5px 20px;height:auto;font-size:14px;
+}
+.wpa-admin .wpa-card__foot .button-primary:hover,
+.wpa-admin .wpa-card__foot .button-primary:focus,
+.wpa-admin .wpa-savebar .button-primary:hover,
+.wpa-admin .wpa-savebar .button-primary:focus{background:var(--wpa-accent-dark);border-color:var(--wpa-accent-dark);box-shadow:none;}
+.wpa-admin .wpa-warn{color:#b26a00;font-weight:500;}
+
+/* Notice */
+.wpa-admin .wpa-notice{
+	border-radius:10px;border:1px solid var(--wpa-accent-border);
+	background:var(--wpa-accent-soft);color:#14532d;
+	padding:12px 18px;margin:0 0 18px;box-shadow:var(--wpa-shadow);
+	display:flex;align-items:center;gap:10px;font-size:14px;
+}
+.wpa-admin .wpa-notice.error{border-color:#f0c2c2;background:#fdf0f0;color:#7a1f1f;}
+.wpa-admin .wpa-notice .dashicons{font-size:20px;width:20px;height:20px;}
+
+/* Stats table */
+.wpa-admin .wpa-stats{width:100%;border-collapse:separate;border-spacing:0;}
+.wpa-admin .wpa-stats th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--wpa-muted);padding:6px 14px 10px;border-bottom:2px solid var(--wpa-border);}
+.wpa-admin .wpa-stats td{padding:14px;border-bottom:1px solid var(--wpa-border);font-size:14px;}
+.wpa-admin .wpa-stats tr:last-child td{border-bottom:0;}
+.wpa-admin .wpa-stats .wpa-source{font-weight:600;color:var(--wpa-text);}
+.wpa-admin .wpa-stats .wpa-stat-num{font-weight:600;font-size:17px;color:var(--wpa-accent-dark);}
+.wpa-admin .wpa-stats .wpa-empty{color:var(--wpa-muted);font-style:italic;}
